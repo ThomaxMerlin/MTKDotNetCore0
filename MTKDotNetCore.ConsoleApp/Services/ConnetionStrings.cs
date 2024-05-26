@@ -6,10 +6,10 @@ namespace DotNetTrainingBatch4.ConsoleApp.Services
     {
         public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {
-            DataSource = ".",
+            DataSource = "DESKTOP-4LL7LAJ",
             InitialCatalog = "DotNetTrainingBatch4",
             UserID = "sa",
-            Password = "sasa@123",
+            Password = "sa@123",
             TrustServerCertificate = true
         };
     }

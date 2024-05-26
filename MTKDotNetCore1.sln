@@ -5,19 +5,21 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTKDotNetCore1", "MTKDotNetCore1\MTKDotNetCore1.csproj", "{4B274A56-ABE8-4C9B-B468-990A6F4A2F5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTKDotNetCore.ConsoleApp", "MTKDotNetCore.ConsoleApp\MTKDotNetCore.ConsoleApp.csproj", "{943B529A-C94C-414A-801B-420A07068D17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTKDotNetCore.ConsoleApp", "MTKDotNetCore.ConsoleApp\MTKDotNetCore.ConsoleApp.csproj", "{943B529A-C94C-414A-801B-420A07068D17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTKDotNet.ConsoleAppHttpClient", "MTKDotNet.ConsoleAppHttpClient\MTKDotNet.ConsoleAppHttpClient.csproj", "{234F7378-F414-4C93-8602-596F0D4CD0CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTKDotNet.ConsoleAppHttpClient", "MTKDotNet.ConsoleAppHttpClient\MTKDotNet.ConsoleAppHttpClient.csproj", "{234F7378-F414-4C93-8602-596F0D4CD0CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTKDotNet.ConsoleAppHttpClientExamples", "MTKDotNet.ConsoleAppHttpClientExamples\MTKDotNet.ConsoleAppHttpClientExamples.csproj", "{D6A1FB7B-1816-4261-8FC2-5C3E03ADAAFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTKDotNet.ConsoleAppHttpClientExamples", "MTKDotNet.ConsoleAppHttpClientExamples\MTKDotNet.ConsoleAppHttpClientExamples.csproj", "{D6A1FB7B-1816-4261-8FC2-5C3E03ADAAFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTKDotNet.ConsoleAppRestClientExamples", "MTKDoTNet.ConsoleAppRestClientExamples\MTKDotNet.ConsoleAppRestClientExamples.csproj", "{9B3BFD70-188E-4792-AFC6-64A9C3A5A84E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTKDotNet.ConsoleAppRestClientExamples", "MTKDoTNet.ConsoleAppRestClientExamples\MTKDotNet.ConsoleAppRestClientExamples.csproj", "{9B3BFD70-188E-4792-AFC6-64A9C3A5A84E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTK.RestApi", "MTK.RestApi\MTK.RestApi.csproj", "{C3664AE2-B9D9-4919-8454-924B9549192D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTK.RestApi", "MTK.RestApi\MTK.RestApi.csproj", "{C3664AE2-B9D9-4919-8454-924B9549192D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTKDotNet.Shared", "MTKDotNet.Shared\MTKDotNet.Shared.csproj", "{377C68BC-CFAF-413F-B09F-043E9F33F293}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTKDotNet.Shared", "MTKDotNet.Shared\MTKDotNet.Shared.csproj", "{377C68BC-CFAF-413F-B09F-043E9F33F293}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTKDotNet.RestApiWithNLayer", "MTKDotNet.RestApiWithNLayer\MTKDotNet.RestApiWithNLayer.csproj", "{A268EEBC-D09C-4B1E-907D-3E5B0C43497A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTKDotNet.RestApiWithNLayer", "MTKDotNet.RestApiWithNLayer\MTKDotNet.RestApiWithNLayer.csproj", "{A268EEBC-D09C-4B1E-907D-3E5B0C43497A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTKDotNet.PizzaApi", "MTKDotNet.PizzaApi\MTKDotNet.PizzaApi.csproj", "{05A51B27-A413-43A3-BC5E-3B98B0F52667}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{A268EEBC-D09C-4B1E-907D-3E5B0C43497A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A268EEBC-D09C-4B1E-907D-3E5B0C43497A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A268EEBC-D09C-4B1E-907D-3E5B0C43497A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05A51B27-A413-43A3-BC5E-3B98B0F52667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05A51B27-A413-43A3-BC5E-3B98B0F52667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05A51B27-A413-43A3-BC5E-3B98B0F52667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05A51B27-A413-43A3-BC5E-3B98B0F52667}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
