@@ -2,57 +2,80 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace MTKDotNetCore.RestApiWithNLayer.Features.PickAPile;
-
-[Route("api/[controller]")]
-[ApiController]
-public class PickAPileController : ControllerBase
+namespace MTKDotNetCore.RestApiWithNLayer.Features.PickAPile
 {
-    private async Task<PickAPileController> GetDataAsync()
+    [Route("api/[controller]")]
+    [ApiController]
+    public class PickAPileController : ControllerBase
     {
-        string jsonStr = await System.IO.File.ReadAllTextAsync("PickAPiledata.json");
-        var model = JsonConvert.DeserializeObject<PickAPileController>(jsonStr);
-        return model;
+        private async Task<PickAPileData> GetDataAsync()
+        {
+            try
+            {
+                string jsonStr = await System.IO.File.ReadAllTextAsync("PickAPile.json");
+                var model = JsonConvert.DeserializeObject<PickAPileData>(jsonStr);
+                return model;
+            }
+            catch (System.Exception ex)
+            {
+                // Log the exception
+                return null;
+            }
+        }
+
+        // api/PickAPile/questions
+        [HttpGet("questions")]
+        public async Task<IActionResult> Questions()
+        {
+            var model = await GetDataAsync();
+            if (model == null)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data");
+            }
+            return Ok(model.Questions);
+        }
+
+        [HttpGet("{questionNo}/{no}")]
+        public async Task<IActionResult> Answer(int questionNo, int no)
+        {
+            var model = await GetDataAsync();
+            if (model == null)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data");
+            }
+
+            var answer = model.Answers.FirstOrDefault(x => x.QuestionId == questionNo && x.AnswerId == no);
+            if (answer == null)
+            {
+                return NotFound("Answer not found");
+            }
+
+            return Ok(answer);
+        }
     }
 
-    // api/PickAPile/questions
-
-    [HttpGet("questions")]
-    public async Task<IActionResult> Questions()
+    public class PickAPileData
     {
-        var model = await GetDataAsync();
-        return Ok(model.Questions);
-
+        public Question[] Questions { get; set; }
+        public Answer[] Answers { get; set; }
     }
 
-    [HttpGet("{questionNo}/{no}")]
-    public async Task<IActionResult> Answer(int questionNo, int no)
+    public class Question
     {
-        var model = await GetDataAsync();
-        return Ok(model.Answers.FirstOrDefault(x => x.QuestionId == questionNo && x.AnswerId == no));
+        public int QuestionId { get; set; }
+        public string QuestionName { get; set; }
+        public string QuestionDesp { get; set; }
     }
-}
 
-
-public class PickAPileController
-{
-    public Question[] Questions { get; set; }
-    public Answer[] Answers { get; set; }
-}
-
-public class Question
-{
-    public int QuestionId { get; set; }
-    public string QuestionName { get; set; }
-    public string QuestionDesp { get; set; }
-}
-
-public class Answer
-{
-    public int AnswerId { get; set; }
-    public string AnswerImageUrl { get; set; }
-    public string AnswerName { get; set; }
-    public string AnswerDesp { get; set; }
-    public int QuestionId { get; set; }
+    public class Answer
+    {
+        public int AnswerId { get; set; }
+        public string AnswerImageUrl { get; set; }
+        public string AnswerName { get; set; }
+        public string AnswerDesp { get; set; }
+        public int QuestionId { get; set; }
+    }
 }

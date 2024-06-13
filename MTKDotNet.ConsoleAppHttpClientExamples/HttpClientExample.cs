@@ -2,7 +2,7 @@
 using System.Text;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace DotNetTrainingBatch4.ConsoleAppHttpClientExamples
+namespace MTKDotNet.ConsoleAppHttpClientExamples
 {
     internal class HttpClientExample
     {

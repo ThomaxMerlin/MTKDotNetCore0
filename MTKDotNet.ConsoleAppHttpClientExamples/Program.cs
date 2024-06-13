@@ -1,4 +1,4 @@
-﻿using DotNetTrainingBatch4.ConsoleAppHttpClientExamples;
+﻿using MTKDotNet.ConsoleAppHttpClientExamples;
 
 Console.WriteLine("Hello, World!");
 
